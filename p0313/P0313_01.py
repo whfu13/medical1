@@ -23,5 +23,7 @@ num1 = int(input("1번째 숫자를 입력하세요 >> "))
 num2 = int(input("2번째 숫자를 입력하세요 >> "))
 # c = input("원하는 사칙연산을 입력하세요.")
 
+# 함수호출
+# result = cal(num1,num2,c)
 result1,result2,result3,result4 = cal(num1,num2)
-print("{},{}결과값 : {},{},{},{} ".format(num1,num2,result1,result2,result3,result4))
+print("{},{} 결과값 : {},{},{},{} ".format(num1,num2,result1,result2,result3,result4))
