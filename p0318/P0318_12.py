@@ -14,10 +14,10 @@ class Car:
         Car.carCount += 1
         self.carNo = Car.carCount
     
-    def upspeed(self,sp):
+    def up_speed(self,sp):
         self.speed += sp
-        
-    def downspeed(self,sp):
+
+    def down_speed(self,sp):
         self.speed -= sp
         
 car_list = []
@@ -28,17 +28,17 @@ c1.color = "white"
 c1.door = 5
 c1.tire = 4
 c1.speed = 0
-c1.upspeed(30)
+c1.up_speed(30)
 print(f"c1 : {c1.carNo},{c1.color},{c1.door},{c1.tire},{c1.speed}")
 
 c2 = Car("red",5,4,0)
 # print(f"c2 : {c2.carNo},{c2.color},{c2.door},{c2.tire},{c2.speed}")
-c2.upspeed(100)
+c2.up_speed(100)
 print(f"c2 : {c2.carNo},{c2.color},{c2.door},{c2.tire},{c2.speed}")
 
 c3 = Car("silver",5,4,0)
 # print(f"c3 : {c3.carNo},{c3.color},{c3.door},{c3.tire},{c3.speed}")
-c3.upspeed(70)
+c3.up_speed(70)
 print(f"c3 : {c3.carNo},{c3.color},{c3.door},{c3.tire},{c3.speed}")
 
 # Car 클래스를 선언해서
@@ -54,7 +54,11 @@ print(f"c3 : {c3.carNo},{c3.color},{c3.door},{c3.tire},{c3.speed}")
 # car_list 추가하고
 
 # car_list에 있는 모든 객체의 color,door,tire,speed 모두 출력하시오.
-car_list.append(c1,c2,c3)
-for car in car_list:
-    print("카 리스트 : ",)
+car_list.append(c1)
+car_list.append(c2)
+car_list.append(c3)
+
+print("c1 : ", c1.carNo,c1.color,c1.door,c1.tire,c1.speed)
+print("c2 : ", c2.carNo,c2.color,c2.door,c2.tire,c2.speed)
+print("c3 : ", c3.carNo,c3.color,c3.door,c3.tire,c3.speed)
     
