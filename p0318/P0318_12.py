@@ -10,16 +10,25 @@ class Car:
         self.color = color
         self.door = door
         self.tire = tire
-        self.speed = speed
+        self.__speed = speed
         Car.carCount += 1
         self.carNo = Car.carCount
     
-    def up_speed(self,sp):
-        self.speed += sp
+    def up_speed(self,smartkey):
+        if smartkey == "0x1100":
+            self.__speed += 10
+        else:
+            print("스마트키 다릅니다.")
 
-    def down_speed(self,sp):
-        self.speed -= sp
+    def down_speed(self):
+        self.__speed -= 10  
         
+    def get_speed(self):
+        return self.__speed
+    
+    def set_speed(self,speed):
+        self.__speed += speed
+          
 car_list = []
         
 c1 = Car()
@@ -28,17 +37,19 @@ c1.color = "white"
 c1.door = 5
 c1.tire = 4
 c1.speed = 0
-c1.up_speed(30)
+c1.up_speed("0x1100")
+c1.set_speed(30)
+print(c1.get_speed())
 print(f"c1 : {c1.carNo},{c1.color},{c1.door},{c1.tire},{c1.speed}")
 
 c2 = Car("red",5,4,0)
 # print(f"c2 : {c2.carNo},{c2.color},{c2.door},{c2.tire},{c2.speed}")
-c2.up_speed(100)
+# c2.up_speed(100)
 print(f"c2 : {c2.carNo},{c2.color},{c2.door},{c2.tire},{c2.speed}")
 
 c3 = Car("silver",5,4,0)
 # print(f"c3 : {c3.carNo},{c3.color},{c3.door},{c3.tire},{c3.speed}")
-c3.up_speed(70)
+# c3.up_speed(70)
 print(f"c3 : {c3.carNo},{c3.color},{c3.door},{c3.tire},{c3.speed}")
 
 # Car 클래스를 선언해서
@@ -57,8 +68,10 @@ print(f"c3 : {c3.carNo},{c3.color},{c3.door},{c3.tire},{c3.speed}")
 car_list.append(c1)
 car_list.append(c2)
 car_list.append(c3)
-
-print("c1 : ", c1.carNo,c1.color,c1.door,c1.tire,c1.speed)
-print("c2 : ", c2.carNo,c2.color,c2.door,c2.tire,c2.speed)
-print("c3 : ", c3.carNo,c3.color,c3.door,c3.tire,c3.speed)
-    
+c = Car(c1,c2,c3)
+car_list.append(c)
+# print("c1 : ", c1.carNo,c1.color,c1.door,c1.tire,c1.speed)
+# print("c2 : ", c2.carNo,c2.color,c2.door,c2.tire,c2.speed)
+# print("c3 : ", c3.carNo,c3.color,c3.door,c3.tire,c3.speed)
+print(car_list)
+# print("{},{},{},{},{}".format())
