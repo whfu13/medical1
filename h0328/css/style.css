@@ -1,0 +1,5 @@
+ul{
+    color:blue; /* 목록의 글자색 */
+    list-style: square; /* 블릿의 형태 */
+}
+img{width:700px;}
