@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비교연산자</title>
+    <script>
+        var a = 10;
+        var b = 20;
+        var c = 10;
+        var f = "20";
+        var result;
+        var result2;
+
+        document.write(100+200+"200","<br>");
+
+        result = a>b;
+        document.write("result : ",result+"<br>");
+        
+        result2 = a<b;
+        document.write("result2 : ",result2+"<br>");
+        
+        var result3 = a != b;
+        document.write("result3 : ",result3,"<br>");
+
+        document.write("---------------------------------<br>")
+        if(b==f){ // 문자형타입을 자동으로 숫자형으로 변경해서 비교
+                    // 들어가 있는 값만 비교
+            document.write("같습니다.<br>");
+        }else{
+            document.write("다릅니다.<br>");
+        }
+        document.write("---------------------------------<br>")
+        if(b === f){ // === 들어가 있는 값과 비교
+            document.write("같습니다.<br>");
+        }else{
+            document.write("다릅니다.<br>");
+        }
+0
+        if(a > b){
+            document.write(a);}
+        else{
+            document.write(b);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
