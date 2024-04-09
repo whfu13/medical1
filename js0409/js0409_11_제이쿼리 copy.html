@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>제이쿼리</title>
+    <script>
+        
+        let f_size = 10;
+        $(function(){
+            $("#txt").text('반갑습니다.');
+
+        });
+
+        function fontBtn(){
+            f_size += 1;
+            $("#txt").css("font-size",f_size,"50px");
+        }
+
+    </script>
+    <style>
+        #txt{color:red; font-size:13px;} /* css */
+    </style>
+</head>
+<body>
+    <div id="txt">안녕하세요.</div>
+    <br>
+    <button onclick="fontBtn()">글자확대</button>
+    
+    <script>
+        //document.querySelector("#txt").innerText = "반갑습니다.";
+
+    </script>    
+</body>
+</html>

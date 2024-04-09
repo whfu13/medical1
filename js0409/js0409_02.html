@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수선언방법</title>
+    <script>
+        // es6 이전 var - 변수
+        // es6 이후 let - 변수, const - 상수
+        // var 중복으로 변수선언 가능
+        // let,const 중복으로 변수선언 불가능
+        // let,const 초기화를 꼭 해줘야함. >> 초기화 하지 않고 사용시 에러
+        // let,const는 지역변수로 선언된 것은 전역에서 사용할 수 없음.
+        var count ;
+        let b = 0;
+        
+        document.write("count : ",count,"<br>");
+        document.write("b : ",b,"<br>");
+        
+        function fun(){
+            var va = 10;
+            let d = 0;
+        }
+
+        document.write("d : ",d,"<br>");
+        document.write("va : ",va,"<br>");
+
+
+
+        //const c =2;
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
