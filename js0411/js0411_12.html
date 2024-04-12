@@ -16,21 +16,22 @@
     <script>
         $(function(){
             let no = [1,2,3,4,5,6,7,8,9,10];
-            let id = [aaa,bbb,ccc,sholom,marja,rebbecca,dotti,aleta,langston,byran];
+            let id = ["aaa","bbb","ccc","sholom","marja","rebbecca","dotti","aleta","langston","byran"];
             let pw = [1111,2222,3333,5462,7238,5127,6703,6602,3334,5543];
-            let name = ['홍길동','유관순','이순신','김구','강감찬','김유신','홍길순','홍길자','최현묵','이규원'];
-            let pnum = [640-176-1140,112-116-7358,827-134-1052,902-633-5447,259-566-8811,550-280-4598,974-632-1467,498-680-5954,532-597-6922,458-696-4923];
-            let total = [247,236,225,189,230,211,218,176,220,233];
+            let gender = ['M','M','M','M','F','F','F','F','M','M'];
+            let pnum = ["640-176-1140","112-116-7358","827-134-1052","902-633-5447","259-566-8811","550-280-4598","974-632-1467","498-680-5954","532-597-6922","458-696-4923"];
+            let email = ["aepelett0@topsy.com","cchadwen1@arizona.edu","wpalser2@ca.gov","skimbling3@live.com","mboustred4@rambler.ru","rtunnock5@java.com","dtuohy6@phpbb.com","apendreigh7@123-reg.co.uk","lparfrey8@mediafire.com","brocks9@goo.gl"];
+
 
             let hdata = "";
             for(let i=0;i<10;i++){
-                hdata = "<tr id='"+no[i]+"'>";
-                hdata = "<td>"+no[i]+"</td>";
-                hdata = "<td>"+id[i]+"</td>";
-                hdata = "<td>"+pw[i]+"</td>";
-                hdata = "<td>"+name[i]+"</td>";
-                hdata = "<td>"+pnum[i]+"</td>";
-                hdata = "<td>"+total[i]+"</td>";
+                hdata += "<tr id='"+no[i]+"'>";
+                hdata += "<td>"+no[i]+"</td>";
+                hdata += "<td>"+id[i]+"</td>";
+                hdata += "<td>"+pw[i]+"</td>";
+                hdata += "<td>"+gender[i]+"</td>";
+                hdata += "<td>"+pnum[i]+"</td>";
+                hdata += "<td>"+email[i]+"</td>";
                 hdata += "<td><button class='delBtn'>삭제</td>";
                 hdata += "</tr>";
             }
@@ -41,7 +42,7 @@
             $(".delBtn").click(function(){
                 console.log("클릭한 요소 id: "+$(this).parent().parent().attr("id"));
                 let del_id = $(this).parent().parent().attr("id");
-                if(confirm(del_id+"번 학생의 성적을 삭제하시겠습니까?")){
+                if(confirm(del_id+"번 회원의 정보를 삭제하시겠습니까?")){
                     $("#"+del_id).remove();
     
              };
@@ -69,7 +70,7 @@
                     <th>비밀번호</th>
                     <th>성별</th>
                     <th>전화번호</th>
-                    <th>합계</th>
+                    <th>이메일</th>
                     <th>삭제</th>
                 </tr>
             </thead>
