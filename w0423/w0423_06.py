@@ -17,9 +17,19 @@ soup = BeautifulSoup(res.text,"lxml")
 # 인천직할시 : 인구
 # 경기도 : 인구
 # 합계 : 인구를 출력하시오.
-print(soup.find("div",{"class":"tab_section current_table title_table_div"}))
-item = soup.find("div",{"class":"tab_section current_table title_table_div"})
-items = item.find("table",{"class":"tbl_type1"})
-print("서울특별시 : ",soup.find("td",{"class":"td_admin th1"}).text)
-print("시 : ",soup.find())
-print("서울특별시 : ",soup.find())
+# print(soup.find("div",{"class":"tab_section current_table title_table_div"}))
+# print(soup.find("div",{"id":"content_wrap"}))
+it = soup.find("div",{"class":"tab_section current_table title_table_div"})
+# print("개수 : ",len(it))
+items = it.find_all("tr")
+# pop = soup.find("tr",{"class":"th1"})
+# pop1 = pop.find_all("tr")
+for i,item in enumerate(items):
+    stock = items[i]
+    td_list = stock.find_all("td")
+    if len(td_list)<=1: continue
+    print("서울특별시 : ",td_list[2].text)
+    print("인천광역시 : ",td_list[5].text)
+    print("경기도 : ",td_list[10].text)
+    print("-"*40)
+    # print("합계 : {}+{}+{}={}".format(items[4].text,items[7].text,items[12].text))

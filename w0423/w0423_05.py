@@ -22,12 +22,8 @@ soup = BeautifulSoup(res.text,"lxml")
 item = soup.find("div",{"class":"_officeCard _officeCard0"})
 ranks = item.find_all("div",{"class":"rankingnews_box"})
 print("개수 : ",len(ranks)) # 12개
-print("순위 : ",soup.find("em",{"class":"list_ranking_num"}))
-print("제목 : ",soup.find("a",{"class":"list_title"}))
-print("이미지 링크 : ",soup.find("a",{"class":"list_img nclicks('RBP.rnknws')"}))
-
 for rank in ranks:
     items = rank.find_all("li")
-    print("제목 : ",soup.find("a",{"class":"list_title"}).text)
+    print("제목 : ",items[0].find("a",{"class":"list_title"}).text)
     print("li 개수 : ",len(items))
     print("-"*40)
