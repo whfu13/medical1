@@ -84,8 +84,8 @@ $(function(){
     
             // html소스를 tbody 추가
             //$("#body").html(htmlData); //기존html에 덮어쓰기
-            $("#body").prepend(htmlData); //기존html 위쪽에 추가
-            //$("#body").append(htmlData); //기존html 뒤쪽에 추가
+            // $("#body").prepend(htmlData); //기존html 위쪽에 추가
+            $("#body").append(htmlData); //기존html 뒤쪽에 추가
             
             //input 초기화
             $("#name").val("");
