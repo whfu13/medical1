@@ -1,4 +1,5 @@
--- 테이블 생성
+ 1` 
+ -- 테이블 생성
 create table emp01(
 emp_id number(6),
 emp_name varchar2(80),
