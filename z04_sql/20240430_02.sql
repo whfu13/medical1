@@ -177,6 +177,15 @@ high_amount number
 );
 
 insert into customer_rank values(
+'BRONZE',0,999999
+);
+insert into customer_rank values(
+'SILVER',1000000,1999999
+);
+insert into customer_rank values(
+'GOLD',2000000,2999999
+);
+insert into customer_rank values(
 'PLATINUM',3000000,9999999
 );
 
