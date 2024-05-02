@@ -5,16 +5,18 @@ drop table students;
 -- 새롭게 순차적 번호 생성
 select rownum,a.* from students a;
 
-select * from students where name='홍길동'
-update students set id = 'aaa',name='홍길동',gender='M' where id ='Ebenezer' and pw='9297';
+select * from students;
 
-update students set id= 'bbb', name='유관순',gender='F' where id ='Isidro';
-
-update students set id='fff', name='김유신',gender='M' where id='Margaret' and pw='5573';
-
-update students set id= 'hhh', name='홍길순',gender='F' where id ='Phillipp' and pw='4301';
-
-rollback;
+select * from students where name='홍길동';
+update students set id = 'aaa',name='홍길동',gender='M' where id='Eberto' and pw='1123';
+update students set id='bbb',name='유관순',gender='F' where id='Jedediah' and pw='3347';
+update students set id='ccc',name='이순신',gender='M' where id='Jeno' and pw='2068';
+update students set id='ddd',name='강감찬',gender='M' where id='Rodi' and pw='9868';
+update students set id='eee',name='김구',gender='M' where id='Pavel' and pw='2521';
+update students set id='fff',name='김유신',gender='M' where id='Micheal' and pw='8385';
+update students set id='ggg',name='홍길자',gender='F' where id='Jessie' and pw='8752';
+update students set id='hhh',name='홍길순',gender='F' where id='Iver' and pw='2443';
+commit;
 
 -- 새롭게 순차적 번호 생성: rownum
 select rownum,a.* from students a
