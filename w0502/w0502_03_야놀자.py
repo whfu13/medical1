@@ -17,7 +17,7 @@ headers = {"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/5
 browser = webdriver.Chrome()
 browser.maximize_window()
 
-url = f"https://www.yanolja.com/?utm_source=google_sa&utm_medium=cpc&utm_campaign=20738115572&utm_content=160897187931&utm_term=kwd-327025203539&gad_source=1&gclid=EAIaIQobChMIstLNpr3uhQMVStAWBR2lIg4bEAAYASAAEgL6Z_D_BwE"
+url = f"https://www.yanolja.com/search/%ED%98%B8%ED%85%94?keyword=%ED%98%B8%ED%85%94&searchKeyword=%25ED%2598%25B8%25ED%2585%2594"
 browser.get(url)
 time.sleep(2)
 
@@ -47,19 +47,30 @@ elem = browser.find_element(By.CLASS_NAME,'SearchInput_input__342U2')
 elem.send_keys('호텔')
 elem.send_keys(Keys.ENTER)
 time.sleep(5)
-prev_height = browser.execute_script("return document.body.scrollHeight")
-print("최초 높이:",prev_height)
-cnt = 0
-while True:
-    if cnt == 5: break
-    browser.execute_script("window.scrollTo(0,document.body.scrollHeight)")
-    time.sleep(1)
-    curr_height = browser.execute_script("return document.body.scrollHeight")
-    if prev_height == curr_height:
-        break
-    prev_height = curr_height
-    print('현재 높이 :',curr_height)
-    cnt += 1
+
+hotels = soup.find_all("div",{"class":"PlaceListItemText_container__fUIgA text-unit"})
+print("개수 : ",len(hotels))
+
+title = soup.find("strong",{"PlaceListTitle_text__2511B"})
+print("제목 : ",title.text)
+
+
+
+
+
+# prev_height = browser.execute_script("return document.body.scrollHeight")
+# print("최초 높이:",prev_height)
+# cnt = 0
+# while True:
+#     if cnt == 5: break
+#     browser.execute_script("window.scrollTo(0,document.body.scrollHeight)")
+#     time.sleep(1)
+#     curr_height = browser.execute_script("return document.body.scrollHeight")
+#     if prev_height == curr_height:
+#         break
+#     prev_height = curr_height
+#     print('현재 높이 :',curr_height)
+#     cnt += 1
 
 
 
