@@ -59,13 +59,13 @@ for i,melon in enumerate(melons):
     print("좋아요수 : ",r_likeNum)
     print("-"*10)
 #     # DB저장
-#     sql = f"insert into yeogi values (melon_seq.nextval,{rank},{v_rank}\
-#     ,'{img}','{title}','{singer}',{likeNum})"
-#     cursor.execute(sql)
-# print("-"*30)
-# cursor.execute('commit')
-# cursor.close()
-# conn.close()
+    sql = f"insert into yeogi values (melon_seq.nextval,{rank},{v_rank}\
+    ,'{img}','{title}','{singer}',{likeNum})"
+cursor.execute(sql)
+print("-"*30)
+cursor.execute('commit')
+cursor.close()
+conn.close()
 # find,find_all
 
 # # 파일저장
