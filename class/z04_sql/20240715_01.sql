@@ -43,3 +43,5 @@ insert into commentB values(
 commentb_seq.nextval,47,'ccc','','이벤트 신청합니다.',sysdate
 )
 ;
+
+select * from commentb;
